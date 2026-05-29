@@ -17,6 +17,8 @@ TECH_START = "<!-- TECH_STACK:START -->"
 TECH_END = "<!-- TECH_STACK:END -->"
 PROJECTS_START = "<!-- PUBLIC_PROJECTS:START -->"
 PROJECTS_END = "<!-- PUBLIC_PROJECTS:END -->"
+STATS_START = "<!-- PROFILE_STATS:START -->"
+STATS_END = "<!-- PROFILE_STATS:END -->"
 
 EXCLUDED_LANGUAGES = {
     "BibTeX Style",
@@ -117,6 +119,13 @@ def fetch_all_repos(token: str) -> list[dict]:
     return repos
 
 
+def fetch_user(token: str) -> dict:
+    data = request_json("https://api.github.com/user", token)
+    if not isinstance(data, dict):
+        raise SystemExit("unexpected GitHub user response")
+    return data
+
+
 def collect_language_bytes(repos: list[dict], token: str) -> Counter[str]:
     counts: Counter[str] = Counter()
     for repo in repos:
@@ -196,6 +205,37 @@ def render_projects(repos: list[dict]) -> str:
     return "\n".join(rows)
 
 
+def render_stats(repos: list[dict], user: dict, counts: Counter[str]) -> str:
+    public_sources = [
+        repo
+        for repo in repos
+        if not repo.get("private") and not repo.get("fork") and repo.get("name") != OWNER
+    ]
+    public_forks = [
+        repo
+        for repo in repos
+        if not repo.get("private") and repo.get("fork") and repo.get("name") != OWNER
+    ]
+    top_languages = sorted(
+        counts,
+        key=lambda language: (-counts[language], language.lower()),
+    )[:5]
+    stack = " · ".join(top_languages) if top_languages else "持续更新中"
+    followers = int(user.get("followers") or 0)
+    public_gists = int(user.get("public_gists") or 0)
+    return "\n".join(
+        [
+            "| 指标 | 当前状态 |",
+            "| --- | --- |",
+            f"| 公开原创项目 | `{len(public_sources)}` |",
+            f"| 公开 Fork | `{len(public_forks)}` |",
+            f"| Followers | `{followers}` |",
+            f"| Public gists | `{public_gists}` |",
+            f"| 主力语言 | {stack} |",
+        ]
+    )
+
+
 def replace_block(text: str, start: str, end: str, replacement: str) -> str:
     start_index = text.find(start)
     end_index = text.find(end)
@@ -210,15 +250,18 @@ def replace_block(text: str, start: str, end: str, replacement: str) -> str:
 
 def main() -> int:
     token = github_token()
+    user = fetch_user(token)
     repos = fetch_all_repos(token)
 
     tech_counts = collect_language_bytes(repos, token)
     tech_section = render_badges(parse_languages(tech_counts))
     projects_section = render_projects(repos)
+    stats_section = render_stats(repos, user, tech_counts)
 
     readme = README.read_text(encoding="utf-8")
     readme = replace_block(readme, TECH_START, TECH_END, tech_section)
     readme = replace_block(readme, PROJECTS_START, PROJECTS_END, projects_section)
+    readme = replace_block(readme, STATS_START, STATS_END, stats_section)
     README.write_text(readme, encoding="utf-8")
     return 0
 

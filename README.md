@@ -32,13 +32,15 @@
 
 ### 统计
 
-<p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=subisle&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true"
-    height="160"
-    alt="GitHub stats"
-  />
-</p>
+<!-- PROFILE_STATS:START -->
+| 指标 | 当前状态 |
+| --- | --- |
+| 公开原创项目 | `4` |
+| 公开 Fork | `5` |
+| Followers | `0` |
+| Public gists | `1` |
+| 主力语言 | Python · TypeScript · JavaScript · Vue · Go |
+<!-- PROFILE_STATS:END -->
 
 <p align="center">
   <sub>技术栈与项目列表由 GitHub 数据自动更新。</sub>
