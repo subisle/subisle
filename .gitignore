@@ -1,0 +1,26 @@
+# Local secrets and private data
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite
+*.db
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.jsonl
+
+# Local agent and skill files
+AGENTS.md
+CLAUDE.md
+agent.md
+.codebuddy/
+.clinerules/
+.claude/
+.codex/
+skill/
+skills/
