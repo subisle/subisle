@@ -42,6 +42,24 @@
 | 主力语言 | Python · TypeScript · JavaScript · Vue · Go |
 <!-- PROFILE_STATS:END -->
 
+### 活动
+
+<p align="center">
+  <a href="https://git.io/streak-stats">
+    <img
+      src="https://streak-stats.demolab.com/?user=subisle&locale=zh_Hans&hide_border=true&theme=default"
+      alt="GitHub streak stats"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <img
+    src="https://visitor-badge.laobi.icu/badge?page_id=subisle.subisle"
+    alt="visitor badge"
+  />
+</p>
+
 <p align="center">
   <sub>技术栈与项目列表由 GitHub 数据自动更新。</sub>
 </p>
