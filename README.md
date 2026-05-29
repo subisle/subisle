@@ -1,6 +1,6 @@
-<h1 align="center">subisle</h1>
+<h1 align="center">Subisle</h1>
 
-<p align="center">自动化工具 · 数据采集 · AI 工作流 · 桌面应用</p>
+<p align="center">A Chinese college student building automation tools, data collection workflows, AI workflows, and desktop apps.</p>
 
 <p align="center">
   <a href="https://csbeiyu.cn">Blog</a>
@@ -10,7 +10,7 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com/?lines=Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Vue%20%7C%20Astro;%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86;AI%20%E5%B7%A5%E4%BD%9C%E6%B5%81%E4%B8%8E%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8;%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E6%8A%80%E6%9C%AF%E6%A0%88%E4%B8%AD&center=true&width=640&height=46&color=111827&vCenter=true&pause=900&size=20"
+    src="https://readme-typing-svg.demolab.com/?lines=Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Vue%20%7C%20Astro;Automation%20tools%20and%20data%20collection;AI%20workflows%20and%20desktop%20apps;Keeping%20my%20stack%20up%20to%20date&center=true&width=640&height=46&color=111827&vCenter=true&pause=900&size=20"
     alt="Typing intro"
   />
 </p>
