@@ -1,0 +1,26 @@
+name: Public repository privacy audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run privacy audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROFILE_README_TOKEN || github.token }}
+        run: python scripts/privacy_audit_public_repos.py --owner subisle
