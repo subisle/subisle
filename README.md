@@ -24,10 +24,10 @@
 
 ### 最近公开项目
 <!-- PUBLIC_PROJECTS:START -->
-- [DouyinLang](https://github.com/subisle/DouyinLang) — 抖音音浪数据导出 · `JavaScript`
-- [chaoxing-sign-docs](https://github.com/subisle/chaoxing-sign-docs) — 文档与资料整理
-- [douyinmain](https://github.com/subisle/douyinmain) — `Kotlin`
+- [DouyinLang](https://github.com/subisle/DouyinLang) — 抖音音浪数据导出 · `TypeScript`
 - [xschecking](https://github.com/subisle/xschecking) — `Go`
+- [douyinmain](https://github.com/subisle/douyinmain) — `Kotlin`
+- [chaoxing-sign-docs](https://github.com/subisle/chaoxing-sign-docs) — 文档与资料整理
 <!-- PUBLIC_PROJECTS:END -->
 
 ### 统计
@@ -36,10 +36,10 @@
 | 指标 | 当前状态 |
 | --- | --- |
 | 公开原创项目 | `4` |
-| 公开 Fork | `5` |
+| 公开 Fork | `4` |
 | Followers | `0` |
 | Public gists | `1` |
-| 主力语言 | Python · TypeScript · JavaScript · Vue · Go |
+| 主力语言 | Python · TypeScript · JavaScript · Go · Kotlin |
 <!-- PROFILE_STATS:END -->
 
 ### 活动
