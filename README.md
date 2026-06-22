@@ -24,10 +24,10 @@
 
 ### 最近公开项目
 <!-- PUBLIC_PROJECTS:START -->
+- [Douyin](https://github.com/subisle/Douyin) — `TypeScript`
+- [DouyinLang](https://github.com/subisle/DouyinLang) — 抖音音浪数据导出 · `TypeScript`
 - [codex-hud](https://github.com/subisle/codex-hud) — `Rust`
 - [homebrew-tap](https://github.com/subisle/homebrew-tap) — `Ruby`
-- [DouyinLang](https://github.com/subisle/DouyinLang) — 抖音音浪数据导出 · `TypeScript`
-- [xschecking](https://github.com/subisle/xschecking) — `Go`
 <!-- PUBLIC_PROJECTS:END -->
 
 ### 统计
@@ -35,7 +35,7 @@
 <!-- PROFILE_STATS:START -->
 | 指标 | 当前状态 |
 | --- | --- |
-| 公开原创项目 | `6` |
+| 公开原创项目 | `7` |
 | 公开 Fork | `5` |
 | Followers | `0` |
 | Public gists | `1` |
