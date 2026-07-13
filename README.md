@@ -36,7 +36,7 @@
 | 指标 | 当前状态 |
 | --- | --- |
 | 公开原创项目 | `8` |
-| 公开 Fork | `5` |
+| 公开 Fork | `6` |
 | Followers | `0` |
 | Public gists | `1` |
 | 主力语言 | Python · TypeScript · Go · JavaScript · Kotlin |
