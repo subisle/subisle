@@ -24,10 +24,10 @@
 
 ### 最近公开项目
 <!-- PUBLIC_PROJECTS:START -->
+- [grok-register-winbuild](https://github.com/subisle/grok-register-winbuild) — Temporary Windows build runner for GrokRegister · `Python`
 - [codex-hud](https://github.com/subisle/codex-hud) — `Rust`
 - [homebrew-tap](https://github.com/subisle/homebrew-tap) — `Ruby`
 - [xschecking](https://github.com/subisle/xschecking) — `Go`
-- [douyinmain](https://github.com/subisle/douyinmain) — `Kotlin`
 <!-- PUBLIC_PROJECTS:END -->
 
 ### 统计
@@ -35,7 +35,7 @@
 <!-- PROFILE_STATS:START -->
 | 指标 | 当前状态 |
 | --- | --- |
-| 公开原创项目 | `5` |
+| 公开原创项目 | `6` |
 | 公开 Fork | `5` |
 | Followers | `0` |
 | Public gists | `1` |
