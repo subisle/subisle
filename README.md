@@ -24,7 +24,7 @@
 
 ### 最近公开项目
 <!-- PUBLIC_PROJECTS:START -->
-- [Douyin](https://github.com/subisle/Douyin) — `TypeScript`
+- [Douyin](https://github.com/subisle/Douyin) — `JavaScript`
 - [grok-register-winbuild](https://github.com/subisle/grok-register-winbuild) — Temporary Windows build runner for GrokRegister · `Python`
 - [codex-hud](https://github.com/subisle/codex-hud) — `Rust`
 - [homebrew-tap](https://github.com/subisle/homebrew-tap) — `Ruby`
@@ -39,7 +39,7 @@
 | 公开 Fork | `6` |
 | Followers | `0` |
 | Public gists | `1` |
-| 主力语言 | Python · TypeScript · Go · JavaScript · Kotlin |
+| 主力语言 | TypeScript · Python · Go · JavaScript · Kotlin |
 <!-- PROFILE_STATS:END -->
 
 ### 活动
