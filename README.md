@@ -1,3 +1,3 @@
-I love automation: full-stack systems, AI workflows, and everything that runs without me.
+I love AI.
 
 📫 CraigJones692739@outlook.com
