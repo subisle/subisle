@@ -40,6 +40,22 @@ class PrivacyAuditTests(unittest.TestCase):
         findings = audit.scan_text("subisle/subisle", "README.md", readme, "blob:deadbeef")
         self.assertEqual(findings, [])
 
+    def test_anthropic_trailer_email_is_stripped_before_matching(self) -> None:
+        line = "Co-Authored-By: Claude <noreply@anthropic.com>"
+        self.assertNotIn("@anthropic.com", audit.strip_allowlisted_text(line))
+        findings = audit.scan_text("subisle/demo", "README.md", line, "blob:deadbeef")
+        self.assertFalse(any(item.rule == "email_address" for item in findings))
+
+    def test_audit_tooling_files_are_not_scanned(self) -> None:
+        payload = b"email: someone@example.com"
+        for path in (
+            "scripts/privacy_audit_public_repos.py",
+            "tests/test_privacy_audit_public_repos.py",
+            "docs/superpowers/plans/2026-05-30-public-repo-privacy-audit.md",
+        ):
+            self.assertFalse(audit.should_scan_blob(path, payload), path)
+        self.assertTrue(audit.should_scan_blob("src/app.py", payload))
+
     def test_agent_path_is_review_finding(self) -> None:
         findings = audit.scan_path("subisle/demo", "AGENTS.md", "history-path")
         self.assertTrue(any(item.rule == "agent_instruction_path" for item in findings))

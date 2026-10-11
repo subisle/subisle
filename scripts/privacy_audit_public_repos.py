@@ -34,6 +34,8 @@ ALLOWLIST_URL_PREFIXES = (
 # keeps the weekly audit green without weakening the rules for every other email.
 ALLOWLIST_EMAILS = (
     "CraigJones692739@outlook.com",
+    # Public bot addresses that legitimately appear in commit trailers.
+    "noreply@anthropic.com",
 )
 BINARY_EXTENSIONS = {
     ".7z",
@@ -64,6 +66,15 @@ BINARY_EXTENSIONS = {
 GENERATED_CONTENT_PATHS: list[re.Pattern[str]] = [
     re.compile(r"(^|/)(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|bun\.lockb|Cargo\.lock|go\.sum)$", re.I),
     re.compile(r"(^|/)tsconfig.*\.tsbuildinfo$", re.I),
+]
+
+# The audit tooling's own files: the rule vocabulary, the fixtures that
+# deliberately contain fake secrets, and the design note quoting both.
+# Scanning them can only ever produce self-referential findings.
+AUDIT_TOOLING_PATHS: list[re.Pattern[str]] = [
+    re.compile(r"(^|/)scripts/privacy_audit_public_repos\.py$", re.I),
+    re.compile(r"(^|/)tests/test_privacy_audit_public_repos\.py$", re.I),
+    re.compile(r"(^|/)docs/superpowers/(plans|specs)/[^/]*privacy-audit[^/]*\.md$", re.I),
 ]
 
 PATH_RULES: list[tuple[str, str, re.Pattern[str]]] = [
@@ -301,7 +312,7 @@ def should_ignore_match(rule: str, match: re.Match[str]) -> bool:
 
 def should_scan_blob(path: str, payload: bytes) -> bool:
     normalized = path.replace("\\", "/")
-    for pattern in GENERATED_CONTENT_PATHS:
+    for pattern in (*GENERATED_CONTENT_PATHS, *AUDIT_TOOLING_PATHS):
         if pattern.search(normalized):
             return False
     suffix = Path(path).suffix.lower()
