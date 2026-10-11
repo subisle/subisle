@@ -30,6 +30,16 @@ class PrivacyAuditTests(unittest.TestCase):
         stripped = audit.strip_allowlisted_text(line)
         self.assertNotIn("@users.noreply.github.com", stripped)
 
+    def test_allowlisted_contact_email_is_stripped_before_matching(self) -> None:
+        line = '<a href="mailto:CraigJones692739@outlook.com">CraigJones692739@outlook.com</a>'
+        stripped = audit.strip_allowlisted_text(line)
+        self.assertNotIn("@outlook.com", stripped)
+
+    def test_profile_readme_has_no_findings(self) -> None:
+        readme = (MODULE_PATH.parents[1] / "README.md").read_text(encoding="utf-8")
+        findings = audit.scan_text("subisle/subisle", "README.md", readme, "blob:deadbeef")
+        self.assertEqual(findings, [])
+
     def test_agent_path_is_review_finding(self) -> None:
         findings = audit.scan_path("subisle/demo", "AGENTS.md", "history-path")
         self.assertTrue(any(item.rule == "agent_instruction_path" for item in findings))

@@ -30,6 +30,11 @@ ALLOWLIST_URL_PREFIXES = (
     "https://discord.gg/",
     "https://discord.com/invite/",
 )
+# Contact addresses intentionally published on the profile README: stripping them
+# keeps the weekly audit green without weakening the rules for every other email.
+ALLOWLIST_EMAILS = (
+    "CraigJones692739@outlook.com",
+)
 BINARY_EXTENSIONS = {
     ".7z",
     ".bin",
@@ -194,6 +199,8 @@ def strip_allowlisted_text(text: str) -> str:
         cleaned = cleaned.replace(prefix, "__ALLOWLISTED_URL__")
     cleaned = re.sub(r"https?://(?:www\.)?github\.com/[^\s)>\]\"']+", "__ALLOWLISTED_URL__", cleaned, flags=re.I)
     cleaned = re.sub(r"https?://(?:raw\.githubusercontent\.com|githubusercontent\.com)/[^\s)>\]\"']+", "__ALLOWLISTED_URL__", cleaned, flags=re.I)
+    for email in ALLOWLIST_EMAILS:
+        cleaned = cleaned.replace(email, "__ALLOWLISTED_EMAIL__")
     cleaned = re.sub(r"[\w.+-]+@users\.noreply\.github\.com", "__ALLOWLISTED_EMAIL__", cleaned, flags=re.I)
     return cleaned
 

@@ -6,6 +6,7 @@
   <a href="https://csbeiyu.cn">Blog</a>
   · <a href="https://github.com/subisle?tab=repositories">Repositories</a>
   · <a href="https://github.com/subisle?tab=followers">Followers</a>
+  · <a href="mailto:CraigJones692739@outlook.com">Email</a>
 </p>
 
 <p align="center">
@@ -63,3 +64,8 @@
 <p align="center">
   <sub>技术栈与项目列表由 GitHub 数据自动更新。</sub>
 </p>
+
+### 联系
+
+- Contact — <a href="mailto:CraigJones692739@outlook.com">CraigJones692739@outlook.com</a>
+- Blog — <https://csbeiyu.cn>
