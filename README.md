@@ -1,3 +1,3 @@
-I build automation tools, data collection workflows, AI workflows, and desktop apps.
+I love automation: full-stack systems, AI workflows, and everything that runs without me.
 
 📫 CraigJones692739@outlook.com
